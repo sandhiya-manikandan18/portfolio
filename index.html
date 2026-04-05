@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sandhiya Manikandan — BA Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a3a5c;--navy2:#0f2540;--navy3:#234d78;
+  --bg:#f0f4fa;--surface:#ffffff;--surface2:#f7f9fc;
+  --border:#dde4ef;--border2:#c8d4e8;
+  --text:#1a2a3a;--muted:#5a6e8a;--hint:#8a9ab8;
+  --blue:#2563eb;--blue-soft:#e6effd;
+  --green:#16a34a;--green-soft:#dcfce7;
+  --amber:#d97706;--amber-soft:#fef3c7;
+  --red:#dc2626;--red-soft:#fee2e2;
+  --teal:#0891b2;--teal-soft:#e0f2fe;
+  --display:'DM Serif Display',serif;--body:'DM Sans',sans-serif;
+  --r4:4px;--r8:8px;--r12:12px;--r16:16px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+/* ── SIDEBAR NAV ── */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:240px;z-index:500;background:var(--navy2);display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.06)}
+.sb-brand{padding:1.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.sb-av{width:38px;height:38px;border-radius:var(--r8);background:linear-gradient(135deg,#2563eb,#1a3a5c);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.9rem;color:#fff;font-weight:400;flex-shrink:0}
+.sb-name{font-size:.82rem;font-weight:600;color:#fff;line-height:1.3}
+.sb-role{font-size:.68rem;color:rgba(255,255,255,.4);margin-top:.1rem}
+.sb-status{display:inline-flex;align-items:center;gap:.35rem;background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.3);padding:.25rem .7rem;border-radius:999px;font-size:.65rem;font-weight:600;color:#4ade80}
+.sb-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.sb-nav{flex:1;overflow-y:auto;padding:1rem 0}
+.sb-section{font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:.5rem 1.5rem .3rem}
+.sb-link{display:flex;align-items:center;gap:.7rem;padding:.55rem 1.5rem;text-decoration:none;color:rgba(255,255,255,.5);font-size:.78rem;font-weight:500;transition:all .18s;border-left:2px solid transparent;position:relative}
+.sb-link:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.04);border-left-color:rgba(255,255,255,.2)}
+.sb-link.active{color:#fff;background:rgba(37,99,235,.2);border-left-color:#2563eb}
+.sb-icon{width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.sb-num{margin-left:auto;font-size:.6rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.35);padding:.1rem .45rem;border-radius:3px}
+.sb-footer{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.sb-contact{font-size:.68rem;color:rgba(255,255,255,.3);line-height:1.7}
+.sb-contact a{color:rgba(255,255,255,.5);text-decoration:none}
+.sb-contact a:hover{color:#fff}
+
+/* ── MAIN LAYOUT ── */
+.main{margin-left:240px;min-height:100vh}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:400}
+.tb-breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted)}
+.tb-sep{color:var(--border2)}
+.tb-current{color:var(--text);font-weight:500}
+.tb-actions{display:flex;align-items:center;gap:.6rem}
+.tb-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem 1rem;border-radius:var(--r8);font-size:.75rem;font-weight:600;text-decoration:none;transition:all .18s;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text)}
+.tb-btn:hover{background:var(--bg)}
+.tb-btn-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tb-btn-primary:hover{background:var(--navy3)}
+
+/* ── PAGE SECTIONS ── */
+.page-sec{padding:2rem;border-bottom:1px solid var(--border)}
+.page-sec:last-child{border-bottom:none}
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.sec-title-wrap{}
+.sec-label{font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.2rem}
+.sec-title{font-family:var(--display);font-size:1.5rem;color:var(--text);line-height:1.1}
+.sec-badge{font-size:.68rem;font-weight:600;padding:.25rem .7rem;border-radius:var(--r4);background:var(--blue-soft);color:var(--blue)}
+
+/* ── HERO / OVERVIEW ── */
+#overview{padding:0}
+.hero-band{background:var(--navy2);padding:2rem 2rem 0;position:relative;overflow:hidden}
+.hero-band::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(37,99,235,.08)}
+.hero-band::after{content:'';position:absolute;right:80px;bottom:-40px;width:180px;height:180px;border-radius:50%;background:rgba(37,99,235,.05)}
+.hero-top{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;position:relative;z-index:1;padding-bottom:1.5rem}
+.hero-name{font-family:var(--display);font-size:2.4rem;color:#fff;line-height:1;margin-bottom:.4rem}
+.hero-name em{font-style:italic;color:#93c5fd}
+.hero-subtitle{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.htag{font-size:.68rem;font-weight:600;padding:.25rem .7rem;border-radius:var(--r4);background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1);transition:all .15s}
+.htag:hover{background:rgba(37,99,235,.25);color:#93c5fd;border-color:rgba(37,99,235,.4)}
+.hero-meta{display:flex;flex-direction:column;gap:.6rem;min-width:220px}
+.hm-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r8);padding:.9rem 1rem}
+.hm-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;font-size:.75rem}
+.hm-row+.hm-row{border-top:1px solid rgba(255,255,255,.06)}
+.hm-k{color:rgba(255,255,255,.35);font-size:.68rem;font-weight:500}
+.hm-v{color:rgba(255,255,255,.8);font-weight:600;font-size:.72rem;text-align:right}
+.hm-open{background:rgba(22,163,74,.2);color:#4ade80;font-size:.62rem;font-weight:700;padding:.12rem .45rem;border-radius:3px}
+
+/* KPI ROW */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07)}
+.kpi-card{padding:1rem 1.5rem;border-right:1px solid rgba(255,255,255,.07)}
+.kpi-card:last-child{border-right:none}
+.kpi-n{font-family:var(--display);font-size:1.8rem;color:#fff;line-height:1;margin-bottom:.1rem}
+.kpi-n.blue{color:#93c5fd}.kpi-n.green{color:#4ade80}.kpi-n.amber{color:#fcd34d}
+.kpi-l{font-size:.65rem;font-weight:500;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em}
+
+/* ── STAT CARDS ── */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+.stat-card{background:var(--surface2);border-radius:var(--r8);padding:.9rem 1rem}
+.sc-label{font-size:.65rem;font-weight:600;color:var(--hint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.sc-value{font-size:1.5rem;font-weight:600;color:var(--text);line-height:1}
+
+/* ── DATA TABLE ── */
+.data-table{width:100%;border-collapse:collapse}
+.data-table th{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hint);padding:.6rem .9rem;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left}
+.data-table td{padding:.7rem .9rem;font-size:.82rem;border-bottom:1px solid var(--border);color:var(--text)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--surface2)}
+.dt-badge{font-size:.65rem;font-weight:600;padding:.18rem .55rem;border-radius:var(--r4)}
+.db-blue{background:var(--blue-soft);color:var(--blue)}
+.db-green{background:var(--green-soft);color:var(--green)}
+.db-amber{background:var(--amber-soft);color:var(--amber)}
+.db-teal{background:var(--teal-soft);color:var(--teal)}
+.db-navy{background:#e6efff;color:var(--navy)}
+
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.dash-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r12);padding:1.4rem;transition:all .2s}
+.dash-card:hover{border-color:var(--border2);box-shadow:0 4px 20px rgba(26,58,92,.08)}
+.dc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.9rem}
+.dc-icon{width:36px;height:36px;border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.dci-blue{background:var(--blue-soft)}.dci-green{background:var(--green-soft)}.dci-amber{background:var(--amber-soft)}.dci-teal{background:var(--teal-soft)}.dci-navy{background:#e6efff}
+.dc-num{font-size:.65rem;font-weight:700;background:var(--surface2);color:var(--hint);padding:.15rem .45rem;border-radius:3px;letter-spacing:.08em}
+.dc-title{font-weight:600;font-size:.9rem;color:var(--text);margin-bottom:.35rem;line-height:1.3}
+.dc-desc{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+.dc-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.dc-tag{font-size:.65rem;font-weight:500;padding:.18rem .5rem;border-radius:3px;background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+
+/* ── SKILL BARS ── */
+.skill-list{display:flex;flex-direction:column;gap:.65rem}
+.skill-row{display:grid;grid-template-columns:160px 1fr 36px;align-items:center;gap:.75rem}
+.skill-name{font-size:.78rem;font-weight:500;color:var(--text)}
+.skill-track{height:6px;background:var(--bg);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;transition:width 1s ease}
+.sf-blue{background:var(--blue)}.sf-green{background:var(--green)}.sf-teal{background:var(--teal)}.sf-navy{background:var(--navy)}.sf-amber{background:var(--amber)}
+.skill-pct{font-size:.72rem;font-weight:600;color:var(--muted);text-align:right}
+
+/* ── TWO COL LAYOUT ── */
+.one-col{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+
+/* ── PANEL ── */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r12);overflow:hidden}
+.panel-header{padding:.8rem 1.2rem;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.ph-title{font-size:.78rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:.5rem}
+.ph-icon{font-size:14px}
+.ph-badge{font-size:.62rem;font-weight:600;padding:.12rem .45rem;border-radius:3px;background:var(--blue-soft);color:var(--blue)}
+.panel-body{padding:1.2rem}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.tl-item:last-child{border-bottom:none}
+.tl-left{padding-top:.15rem}
+.tl-date{font-size:.68rem;font-weight:600;color:var(--blue);letter-spacing:.06em;line-height:1.7}
+.tl-dot-row{display:flex;align-items:center;gap:.4rem;margin-top:.3rem}
+.tl-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.tl-right{}
+.tl-role{font-weight:600;font-size:.88rem;color:var(--text);margin-bottom:.1rem}
+.tl-org{font-size:.74rem;color:var(--muted);margin-bottom:.55rem}
+.tl-pts{list-style:none}
+.tl-pts li{font-size:.8rem;color:var(--muted);padding:.2rem 0;padding-left:.9rem;position:relative;border-bottom:1px dotted var(--border)}
+.tl-pts li:last-child{border-bottom:none}
+.tl-pts li::before{content:'›';position:absolute;left:0;color:var(--blue);font-weight:600}
+
+/* ── CERT LIST ── */
+.cert-list{display:flex;flex-direction:column;gap:.5rem}
+.cert-row{display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r8);transition:all .18s}
+.cert-row:hover{border-color:var(--border2);background:var(--surface)}
+.cert-num{font-family:var(--display);font-size:1.3rem;color:var(--border2);width:28px;flex-shrink:0;line-height:1;font-style:italic}
+.cert-ico{width:34px;height:34px;border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cert-title{font-weight:600;font-size:.84rem;color:var(--text)}
+.cert-org{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.cert-yr{margin-left:auto;font-size:.68rem;font-weight:600;color:var(--blue);white-space:nowrap;background:var(--blue-soft);padding:.18rem .55rem;border-radius:3px}
+
+/* ── CALLING CARD ── */
+.card-scene{perspective:1100px;display:flex;justify-content:center;margin:1.5rem 0}
+.ccw{width:400px;height:225px;position:relative;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.23,1,.32,1);cursor:pointer}
+.ccw:hover{transform:rotateY(180deg)}
+.ccf{width:100%;height:100%;position:absolute;backface-visibility:hidden;border-radius:var(--r12);overflow:hidden}
+.ccfront{background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;padding:1.6rem 2rem;box-shadow:0 4px 24px rgba(26,58,92,.1)}
+.ccf-band{height:4px;background:linear-gradient(90deg,var(--navy2),var(--blue),var(--teal));margin-bottom:.9rem;border-radius:2px}
+.ccf-top{display:flex;align-items:center;gap:.9rem}
+.ccf-av{width:44px;height:44px;border-radius:var(--r8);background:var(--navy2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.95rem;color:#fff}
+.ccf-name{font-family:var(--display);font-size:1.2rem;color:var(--text);line-height:1.1}
+.ccf-title{font-size:.65rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-top:.1rem}
+.ccf-contacts{display:flex;flex-direction:column;gap:.25rem}
+.ccf-line{font-size:.65rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;font-weight:500}
+.ccf-line span{color:var(--navy)}
+.ccback{background:var(--navy2);transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:1.8rem}
+.ccb-name{font-family:var(--display);font-size:1.4rem;color:#fff}
+.ccb-sub{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.15em;text-transform:uppercase}
+.ccb-div{width:32px;height:1px;background:rgba(255,255,255,.12)}
+.ccb-skills{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center}
+.ccb-tag{font-size:.62rem;font-weight:600;padding:.18rem .5rem;border-radius:3px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55)}
+.ccb-note{font-size:.62rem;color:rgba(255,255,255,.25)}
+
+/* ── CONTACT GRID ── */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.75rem}
+.contact-card{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);text-decoration:none;transition:all .18s}
+.contact-card:hover{border-color:var(--blue);background:var(--blue-soft)}
+.contact-card:hover .cc-val{color:var(--blue)}
+.cc-ico-wrap{width:34px;height:34px;border-radius:var(--r8);background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cc-label{font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--hint)}
+.cc-val{font-size:.8rem;font-weight:600;color:var(--text)}
+
+/* ── SWOT ── */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.swot-cell{border-radius:var(--r8);padding:1rem}
+.swot-h{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.swot-items{list-style:none}
+.swot-items li{font-size:.78rem;padding:.2rem 0;padding-left:.8rem;position:relative;border-bottom:1px dotted rgba(0,0,0,.08)}
+.swot-items li:last-child{border-bottom:none}
+.swot-items li::before{content:'•';position:absolute;left:0;font-size:.9rem;line-height:1.4}
+.swot-s{background:#dcfce7}.swot-sh{color:#15803d}.swot-si li{color:#166534}.swot-si li::before{color:#15803d}
+.swot-w{background:#fef3c7}.swot-wh{color:#92400e}.swot-wi li{color:#78350f}.swot-wi li::before{color:#b45309}
+.swot-o{background:#e0f2fe}.swot-oh{color:#075985}.swot-oi li{color:#0c4a6e}.swot-oi li::before{color:#0284c7}
+.swot-t{background:#fee2e2}.swot-th{color:#991b1b}.swot-ti li{color:#7f1d1d}.swot-ti li::before{color:#dc2626}
+
+/* ── INFO BOX ── */
+.info-box{background:var(--blue-soft);border:1px solid rgba(37,99,235,.2);border-left:3px solid var(--blue);border-radius:0 var(--r8) var(--r8) 0;padding:1.2rem 1.4rem}
+.info-box p{font-size:.88rem;color:var(--navy);line-height:1.75}
+
+/* ── TAGS ── */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.4rem}
+.tc-tag{font-size:.72rem;font-weight:500;padding:.28rem .7rem;border-radius:var(--r4);border:1px solid var(--border);color:var(--muted);background:var(--surface);transition:all .15s}
+.tc-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ── TABS ── */
+.tab-bar{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.tab-btn{padding:.55rem 1.2rem;font-size:.75rem;font-weight:600;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:-1px;transition:all .18s;font-family:var(--body)}
+.tab-btn.on{color:var(--blue);border-bottom-color:var(--blue)}
+.tab-btn:not(.on):hover{color:var(--text)}
+.tab-pane{display:none}.tab-pane.on{display:block}
+
+/* ── FOOTER ── */
+.dash-footer{background:var(--navy2);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.df-text{font-size:.72rem;color:rgba(255,255,255,.3)}
+.df-dots{display:flex;gap:.35rem}
+.df-dot{width:7px;height:7px;border-radius:50%}
+
+/* ── ANIMATIONS ── */
+.fi{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.fi.v{opacity:1;transform:none}
+.fi.d1{transition-delay:.08s}.fi.d2{transition-delay:.16s}.fi.d3{transition-delay:.24s}.fi.d4{transition-delay:.32s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .page-sec{padding:1.5rem}
+  .two-col,.three-col{grid-template-columns:1fr}
+  .kpi-row{grid-template-columns:1fr 1fr}
+  .ccw,.ccf{width:320px;height:190px}
+  .hero-top{grid-template-columns:1fr}
+  .hero-meta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo">
+      <div class="sb-av">SM</div>
+      <div>
+        <div class="sb-name">Sandhiya Manikandan</div>
+        <div class="sb-role">Business Analyst</div>
+      </div>
+    </div>
+    <span class="sb-status"><span class="sb-dot"></span>Open to BA Roles</span>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Portfolio</div>
+    <a href="#overview" class="sb-link active"><span class="sb-icon">⊞</span>Overview<span class="sb-num">00</span></a>
+    <a href="#toc" class="sb-link"><span class="sb-icon">≡</span>Contents<span class="sb-num">00</span></a>
+    <div class="sb-section">Profile</div>
+    <a href="#biography" class="sb-link"><span class="sb-icon">◎</span>Biography<span class="sb-num">01</span></a>
+    <a href="#career" class="sb-link"><span class="sb-icon">◈</span>Career Goal<span class="sb-num">02</span></a>
+    <div class="sb-section">Work</div>
+    <a href="#work" class="sb-link"><span class="sb-icon">◻</span>Work Samples<span class="sb-num">03</span></a>
+    <a href="#certs" class="sb-link"><span class="sb-icon">◆</span>Certificates<span class="sb-num">04</span></a>
+    <a href="#academic" class="sb-link"><span class="sb-icon">◑</span>Academic Record<span class="sb-num">05</span></a>
+    <div class="sb-section">Skills &amp; History</div>
+    <a href="#skills" class="sb-link"><span class="sb-icon">◧</span>Skills<span class="sb-num">06</span></a>
+    <a href="#experience" class="sb-link"><span class="sb-icon">◫</span>Experience<span class="sb-num">07</span></a>
+    <a href="#community" class="sb-link"><span class="sb-icon">◉</span>Community<span class="sb-num">08</span></a>
+    <div class="sb-section">Networking</div>
+    <a href="#calling-card" class="sb-link"><span class="sb-icon">◌</span>Calling Card<span class="sb-num">09</span></a>
+    <a href="#contact" class="sb-link"><span class="sb-icon">◎</span>Contact<span class="sb-num">10</span></a>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-contact">
+      <a href="mailto:sandhiya.manikandan@georgebrown.ca">sandhiya.manikandan<br>@georgebrown.ca</a><br>
+      <a href="tel:4375561807">(437) 556-1807</a><br>
+      Mississauga, ON · Canada
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="tb-breadcrumb">
+      <span>Portfolio</span><span class="tb-sep">/</span>
+      <span class="tb-current" id="tb-section">Overview</span>
+    </div>
+    <div class="tb-actions">
+      <a href="#calling-card" class="tb-btn">Calling Card</a>
+      <a href="#contact" class="tb-btn tb-btn-primary">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- ── 00 HERO / OVERVIEW ── -->
+  <section class="page-sec" id="overview" style="padding:0;border-bottom:1px solid var(--border)">
+    <div class="hero-band">
+      <div class="hero-top">
+        <div>
+          <div style="font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.8rem">BA Portfolio · 2026 · Mississauga, ON</div>
+          <div class="hero-name">Sandhiya <em>Manikandan</em></div>
+          <div class="hero-subtitle">Business Analyst · ECBA® Candidate · Fintech &amp; IT</div>
+          <div class="hero-tags">
+            <span class="htag">Requirements Elicitation</span>
+            <span class="htag">Agile / Scrum</span>
+            <span class="htag">BABOK®</span>
+            <span class="htag">SDLC</span>
+            <span class="htag">Power BI</span>
+            <span class="htag">UAT Support</span>
+            <span class="htag">Stakeholder Mgmt</span>
+            <span class="htag">Jira</span>
+            <span class="htag">Process Mapping</span>
+            <span class="htag">BRD / FRD</span>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div class="hm-card">
+            <div class="hm-row"><span class="hm-k">Status</span><span class="hm-v"><span class="hm-open">Open to Roles</span></span></div>
+            <div class="hm-row"><span class="hm-k">Location</span><span class="hm-v">Mississauga, ON</span></div>
+            <div class="hm-row"><span class="hm-k">Education</span><span class="hm-v">George Brown College</span></div>
+            <div class="hm-row"><span class="hm-k">Certification</span><span class="hm-v">ECBA® Candidate</span></div>
+            <div class="hm-row"><span class="hm-k">Focus</span><span class="hm-v">Fintech / IT BA</span></div>
+            <div class="hm-row"><span class="hm-k">Availability</span><span class="hm-v">Full-time Sep 2026</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-n blue">2+</div>
+          <div class="kpi-l">Years BA Experience</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-n">12+</div>
+          <div class="kpi-l">Years Total Career</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-n green">ECBA®</div>
+          <div class="kpi-l">Candidate 2026</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-n amber">BABOK®</div>
+          <div class="kpi-l">Aligned Practice</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TOC ── -->
+  <section class="page-sec" id="toc">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">00 — Navigation</div><div class="sec-title">Table of Contents</div></div>
+    </div>
+    <div class="card-grid fi">
+      <a href="#biography" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-navy" style="font-size:14px">01</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Biography &amp; Summary</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#career" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-blue" style="font-size:14px">02</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Career Goal Statement</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#work" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-teal" style="font-size:14px">03</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Work Samples</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#certs" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-amber" style="font-size:14px">04</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Certificates &amp; Awards</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#academic" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-green" style="font-size:14px">05</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Academic Record</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#skills" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-navy" style="font-size:14px">06</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Technical Skills</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#experience" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-blue" style="font-size:14px">07</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Professional Experience</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#community" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-teal" style="font-size:14px">08</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Community &amp; Volunteer</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#calling-card" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-green" style="font-size:14px">09</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Networking Calling Card</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+      <a href="#contact" style="text-decoration:none" class="dash-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%">
+          <div style="display:flex;align-items:center;gap:.75rem"><div class="dc-icon dci-amber" style="font-size:14px">10</div><span style="font-size:.85rem;font-weight:500;color:var(--text)">Contact</span></div>
+          <span style="color:var(--hint);font-size:.8rem">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── 01 BIOGRAPHY ── -->
+  <section class="page-sec" id="biography">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">01 — Biography</div><div class="sec-title">About Me</div></div>
+      <span class="sec-badge">Profile</span>
+    </div>
+    <div class="two-col">
+      <div class="fi">
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1rem">I'm Sandhiya Manikandan — a Business Analyst based in Mississauga, ON, with a strong foundation in requirements elicitation, process documentation, and stakeholder collaboration using BABOK®-aligned techniques.</p>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1rem">My 12+ year career spans travel management, global mobility, operations, and financial technology — giving me a cross-industry lens to understand business context quickly and translate complex needs into actionable requirements. I bring experience collaborating with major financial institutions including BMO, RBC, TD, and Money Mart.</p>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1rem">Currently completing a <strong style="color:var(--text);font-weight:600">Postgraduate Certificate in Information Systems &amp; Business Analysis (T405, Co-op)</strong> at George Brown College, and an <strong style="color:var(--blue);font-weight:600">ECBA® candidate</strong> through IIBA®, expected July/August 2026.</p>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.85">A Permanent Resident of Canada — no sponsorship required. Available part-time immediately and full-time from September 2026.</p>
+      </div>
+      <div class="fi d1">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="ph-title"><span class="ph-icon">◎</span>Profile Details</div>
+            <div class="ph-badge">Active</div>
+          </div>
+          <div class="panel-body" style="padding:.6rem 0">
+            <table class="data-table" style="font-size:.8rem">
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500;width:110px">Location</td><td style="font-weight:500">Mississauga, ON</td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Status</td><td><span class="dt-badge db-green">Open to Roles</span></td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">PR Status</td><td><span class="dt-badge db-teal">No Sponsorship Needed</span></td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Education</td><td style="font-weight:500">George Brown College</td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Certification</td><td><span class="dt-badge db-blue">ECBA® Candidate</span></td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Industry Focus</td><td style="font-weight:500">Fintech / IT</td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Phone</td><td style="font-weight:500">(437) 556-1807</td></tr>
+              <tr><td style="color:var(--hint);font-size:.72rem;font-weight:500">Email</td><td style="font-size:.75rem"><a href="mailto:sandhiya.manikandan@georgebrown.ca" style="color:var(--blue)">sandhiya.manikandan@georgebrown.ca</a></td></tr>
+            </table>
+          </div>
+        </div>
+        <div style="margin-top:1rem">
+          <div class="stat-grid">
+            <div class="stat-card"><div class="sc-label">BA Experience</div><div class="sc-value" style="color:var(--blue)">3+ yrs</div></div>
+            <div class="stat-card"><div class="sc-label">Total Career</div><div class="sc-value">15+ yrs</div></div>
+            <div class="stat-card"><div class="sc-label">Credentials</div><div class="sc-value" style="color:var(--green)">5+</div></div>
+            <div class="stat-card"><div class="sc-label">Industries</div><div class="sc-value">3+</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 CAREER GOAL ── -->
+  <section class="page-sec" id="career">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">02 — Career Goal</div><div class="sec-title">Statement of Career Goal</div></div>
+      <span class="sec-badge">2026</span>
+    </div>
+    <div class="two-col">
+      <div class="fi">
+        <div class="panel" style="margin-bottom:1rem">
+          <div class="panel-header"><div class="ph-title"><span class="ph-icon">◈</span>Goal Statement</div></div>
+          <div class="panel-body">
+            <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-style:italic;border-left:3px solid var(--blue);padding-left:1rem">My goal is to grow as a Business Analyst within financial technology or information systems, contributing to cross-functional teams through BABOK®-aligned practices, Agile delivery support, and clear stakeholder communication — beginning with my ECBA® certification in 2026 and continuing to expand expertise in data analysis, systems thinking, and enterprise solution delivery.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><div class="ph-title"><span class="ph-icon">◉</span>Professional Summary</div></div>
+          <div class="panel-body">
+            <p style="font-size:.84rem;color:var(--muted);line-height:1.75">Results-oriented Business Analyst with 2+ years of combined experience in requirements elicitation, stakeholder collaboration, and process analysis across financial services, operations, and technology environments. Skilled at bridging business and technical teams through structured documentation, user stories, BRDs, and process mapping. Currently completing a Postgraduate Certificate in Information Systems Business Analysis (Co-op) at George Brown College, deepening expertise in BABOK-aligned techniques, Agile/Scrum, and SDLC frameworks. ECBA Candidate (IIBA). Eligible to work in Canada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fi d1">
+        <div class="panel">
+          <div class="panel-header"><div class="ph-title"><span class="ph-icon">◆</span>Skills Demonstrated in This Portfolio</div></div>
+          <div class="panel-body" style="padding:.8rem">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Problem Solving</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Communication</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Technical Skills</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Teamwork</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Leadership</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Initiative</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Goal Achievement</div>
+              <div style="display:flex;align-items:center;gap:.5rem;padding:.45rem .6rem;background:var(--surface2);border-radius:var(--r4);font-size:.78rem;color:var(--text)"><span style="color:var(--blue);font-size:12px">▸</span>Desire &amp; Drive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 WORK SAMPLES ── -->
+  <section class="page-sec" id="work">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">03 — Work Samples</div><div class="sec-title">Projects &amp; Deliverables</div></div>
+      <span class="sec-badge">7 Projects</span>
+    </div>
+    <div class="tab-bar fi">
+      <button class="tab-btn on" onclick="sw('aw',this)">Academic Projects</button>
+      <button class="tab-btn" onclick="sw('pw',this)">Professional Work</button>
+    </div>
+    <div class="tab-pane on" id="aw">
+      <div class="card-grid fi">
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-blue">📋</div><span class="dc-num">ACADEMIC · 01</span></div>
+          <div class="dc-title">LMS Transformation Analysis</div>
+          <div class="dc-desc">Applied SWOT, root cause, gap analysis, SIPOC modelling, stakeholder analysis, and persona development to identify usability gaps in a Learning Management System. Delivered end-to-end requirements including scope model, HLRs, user stories, future-state process, use case specifications, data and business rules, UI requirements, mock-ups, and storyboards.</div>
+          <div class="dc-tags"><span class="dc-tag">SWOT Analysis</span><span class="dc-tag">SIPOC</span><span class="dc-tag">Persona Development</span><span class="dc-tag">Use Cases</span><span class="dc-tag">Wireframes</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-teal">🔄</div><span class="dc-num">ACADEMIC · 02</span></div>
+          <div class="dc-title">Digital Transformation Initiative</div>
+          <div class="dc-desc">Analyzed customer service and system integration needs for a simulated organization. Documented BRD/FRD, evaluated CRM/ERP improvement opportunities, and presented recommendations to a simulated stakeholder group to drive operational efficiency.</div>
+          <div class="dc-tags"><span class="dc-tag">BRD / FRD</span><span class="dc-tag">CRM/ERP</span><span class="dc-tag">Requirements Analysis</span><span class="dc-tag">Stakeholder Presentation</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-green">📊</div><span class="dc-num">ACADEMIC · 03</span></div>
+          <div class="dc-title">Project Success Framework — Team Initiative</div>
+          <div class="dc-desc">Initiated and led a team project covering full project setup — scope definition, project charter, stakeholder register, business owner elicitation, WBS with dictionary, CPM analysis, and Gantt scheduling using Jira + BigPicture. Delivered findings as a video submission.</div>
+          <div class="dc-tags"><span class="dc-tag">Project Charter</span><span class="dc-tag">WBS</span><span class="dc-tag">CPM Analysis</span><span class="dc-tag">Jira + BigPicture</span><span class="dc-tag">Gantt</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-amber">✍️</div><span class="dc-num">ACADEMIC · 04</span></div>
+          <div class="dc-title">eSignature System — Product Backlog</div>
+          <div class="dc-desc">Authored a complete product backlog for an electronic document upload system in a financial services context — including user stories, acceptance criteria, use cases, UI requirements, and wireframe mock-ups tailored to regulated industry standards.</div>
+          <div class="dc-tags"><span class="dc-tag">User Stories</span><span class="dc-tag">Acceptance Criteria</span><span class="dc-tag">Use Cases</span><span class="dc-tag">UI Requirements</span><span class="dc-tag">Wireframes</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="pw">
+      <div class="card-grid fi">
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-navy">📌</div><span class="dc-num">PROFESSIONAL · INFIMIND</span></div>
+          <div class="dc-title">Product Backlog &amp; Requirements Documentation</div>
+          <div class="dc-desc">Gathered and documented business and functional requirements through stakeholder interviews, workshops, and process walkthroughs. Prepared user stories, acceptance criteria, and process flow diagrams. Supported backlog prioritisation and Agile Scrum ceremonies throughout delivery.</div>
+          <div class="dc-tags"><span class="dc-tag">User Stories</span><span class="dc-tag">Backlog Management</span><span class="dc-tag">Agile Delivery</span><span class="dc-tag">UAT Planning</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-blue">📈</div><span class="dc-num">PROFESSIONAL · TERANET</span></div>
+          <div class="dc-title">Insolvency Data Analysis &amp; Compliance Reporting</div>
+          <div class="dc-desc">Analysed bankruptcy and consumer proposal files to evaluate debtor circumstances and creditor positions. Maintained performance dashboards and case records using Excel and SharePoint. Collaborated with BMO, RBC, TD, Money Mart, and licensed insolvency trustees to coordinate due diligence and streamline claim workflows.</div>
+          <div class="dc-tags"><span class="dc-tag">Data Analysis</span><span class="dc-tag">Excel / SharePoint</span><span class="dc-tag">Dashboard Reporting</span><span class="dc-tag">Compliance</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-top"><div class="dc-icon dci-amber">✈️</div><span class="dc-num">PROFESSIONAL · MARLIN TRAVEL</span></div>
+          <div class="dc-title">Operational Reporting &amp; KPI Dashboard Design</div>
+          <div class="dc-desc">Gathered and analyzed travel booking data to support operational KPI reporting. Designed performance dashboards summarizing key metrics and translating raw data into actionable insights for operations leadership. Liaised with internal clients and vendors to clarify requirements.</div>
+          <div class="dc-tags"><span class="dc-tag">Operational Reporting</span><span class="dc-tag">KPI Dashboards</span><span class="dc-tag">Data Analysis</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 CERTIFICATES ── -->
+  <section class="page-sec" id="certs">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">04 — Certificates &amp; Awards</div><div class="sec-title">Certifications &amp; Degrees</div></div>
+      <span class="sec-badge">5 Credentials</span>
+    </div>
+    <div class="cert-list fi">
+      <div class="cert-row">
+        <div class="cert-num">I</div>
+        <div class="cert-ico" style="background:var(--blue-soft);font-size:14px">🏅</div>
+        <div style="flex:1">
+          <div class="cert-title">ECBA® — Entry Certificate in Business Analysis</div>
+          <div class="cert-org">International Institute of Business Analysis (IIBA®)</div>
+        </div>
+        <span class="cert-yr">Expected Jul/Aug 2026</span>
+      </div>
+      <div class="cert-row">
+        <div class="cert-num">II</div>
+        <div class="cert-ico" style="background:var(--teal-soft);font-size:14px">🎓</div>
+        <div style="flex:1">
+          <div class="cert-title">Postgrad Certificate — Information Systems &amp; Business Analysis (T405, Co-op)</div>
+          <div class="cert-org">George Brown College · Toronto, ON</div>
+        </div>
+        <span class="cert-yr">Jan – Aug 2026</span>
+      </div>
+      <div class="cert-row">
+        <div class="cert-num">III</div>
+        <div class="cert-ico" style="background:var(--green-soft);font-size:14px">🎓</div>
+        <div style="flex:1">
+          <div class="cert-title">BSc — Tourism &amp; Hospitality Management</div>
+          <div class="cert-org">Madurai Kamaraj University · Tamil Nadu, India</div>
+        </div>
+        <span class="cert-yr">Completed 2009</span>
+      </div>
+      <div class="cert-row">
+        <div class="cert-num">IV</div>
+        <div class="cert-ico" style="background:var(--amber-soft);font-size:14px">📜</div>
+        <div style="flex:1">
+          <div class="cert-title">Co-op Certificate — Information &amp; Communication Technology</div>
+          <div class="cert-org">Dufferin-Peel Catholic District School Board</div>
+        </div>
+        <span class="cert-yr">2024</span>
+      </div>
+      <div class="cert-row">
+        <div class="cert-num">V</div>
+        <div class="cert-ico" style="background:var(--blue-soft);font-size:14px">📜</div>
+        <div style="flex:1">
+          <div class="cert-title">Customer Service Readiness &amp; North Star Digital Literacy</div>
+          <div class="cert-org">Peel Adult Learning Centre</div>
+        </div>
+        <span class="cert-yr">2023</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 ACADEMIC RECORD ── -->
+  <section class="page-sec" id="academic">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">05 — Academic Record</div><div class="sec-title">Educational History</div></div>
+    </div>
+    <div class="panel fi">
+      <div class="panel-header"><div class="ph-title"><span class="ph-icon">◑</span>Academic Qualifications</div></div>
+      <table class="data-table">
+        <thead><tr><th>Qualification</th><th>Institution</th><th>Status</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:500">Postgraduate Certificate — Information Systems &amp; Business Analysis (T405, Co-op)</td>
+            <td>George Brown College · Toronto, ON</td>
+            <td><span class="dt-badge db-blue">In Progress</span></td>
+            <td style="white-space:nowrap">Jan 2026 – Aug 2026</td>
+          </tr>
+          <tr>
+            <td style="font-weight:500">Bachelor of Science — Tourism &amp; Hospitality Management</td>
+            <td>Madurai Kamaraj University · India</td>
+            <td><span class="dt-badge db-green">Completed</span></td>
+            <td>2006 – 2009</td>
+          </tr>
+          <tr>
+            <td style="font-weight:500">Co-op Placement — Information &amp; Communication Technology</td>
+            <td>Dufferin-Peel Catholic District School Board</td>
+            <td><span class="dt-badge db-green">Completed</span></td>
+            <td>2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel fi" style="margin-top:1rem">
+      <div class="panel-header"><div class="ph-title"><span class="ph-icon">📚</span>Selected Coursework — George Brown College (T405)</div></div>
+      <div class="panel-body">
+        <div class="tag-cloud">
+          <span class="tc-tag">Requirements Elicitation</span>
+          <span class="tc-tag">BABOK® Frameworks</span>
+          <span class="tc-tag">Agile / Scrum</span>
+          <span class="tc-tag">SDLC</span>
+          <span class="tc-tag">Stakeholder Management</span>
+          <span class="tc-tag">Process Modelling</span>
+          <span class="tc-tag">Use Cases</span>
+          <span class="tc-tag">User Stories</span>
+          <span class="tc-tag">Data Modelling</span>
+          <span class="tc-tag">UAT</span>
+          <span class="tc-tag">WBS</span>
+          <span class="tc-tag">Gantt Scheduling</span>
+          <span class="tc-tag">Project Charter</span>
+          <span class="tc-tag">Business Rules Analysis</span>
+          <span class="tc-tag">Decision Tables</span>
+          <span class="tc-tag">Interface Analysis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 06 SKILLS ── -->
+  <section class="page-sec" id="skills">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">06 — Technical Skills</div><div class="sec-title">Skills &amp; Expertise</div></div>
+    </div>
+    <div class="one-col">
+      <!--
+	  <div class="fi">
+        <div class="panel" style="margin-bottom:1rem">
+          <div class="panel-header"><div class="ph-title"><span class="ph-icon">◧</span>Skill Proficiency</div></div>
+          <div class="panel-body">
+            <div class="skill-list">
+              <div class="skill-row"><div class="skill-name">Requirements Elicitation</div><div class="skill-track"><div class="skill-fill sf-blue" style="width:85%"></div></div><div class="skill-pct">85%</div></div>
+              <div class="skill-row"><div class="skill-name">Agile / Scrum</div><div class="skill-track"><div class="skill-fill sf-blue" style="width:80%"></div></div><div class="skill-pct">80%</div></div>
+              <div class="skill-row"><div class="skill-name">BABOK® Framework</div><div class="skill-track"><div class="skill-fill sf-navy" style="width:78%"></div></div><div class="skill-pct">78%</div></div>
+              <div class="skill-row"><div class="skill-name">Stakeholder Mgmt</div><div class="skill-track"><div class="skill-fill sf-teal" style="width:82%"></div></div><div class="skill-pct">82%</div></div>
+              <div class="skill-row"><div class="skill-name">Process Mapping</div><div class="skill-track"><div class="skill-fill sf-green" style="width:75%"></div></div><div class="skill-pct">75%</div></div>
+              <div class="skill-row"><div class="skill-name">Excel (VLOOKUP, Pivots)</div><div class="skill-track"><div class="skill-fill sf-blue" style="width:80%"></div></div><div class="skill-pct">80%</div></div>
+              <div class="skill-row"><div class="skill-name">Power BI</div><div class="skill-track"><div class="skill-fill sf-amber" style="width:60%"></div></div><div class="skill-pct">60%</div></div>
+              <div class="skill-row"><div class="skill-name">SQL (Beginner)</div><div class="skill-track"><div class="skill-fill sf-teal" style="width:45%"></div></div><div class="skill-pct">45%</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  -->
+      <div class="fi">
+        <div class="panel" style="margin-bottom:1rem">
+          <div class="panel-header"><div class="ph-title"><span class="ph-icon">◨</span>Skill Categories</div></div>
+          <div class="panel-body" style="display:flex;flex-direction:column;gap:.8rem">
+            <div>
+              <div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem">Business Analysis</div>
+              <div class="tag-cloud"><span class="tc-tag">Requirements Elicitation</span><span class="tc-tag">BRD / FRD Documentation</span><span class="tc-tag">User Stories</span><span class="tc-tag">Acceptance Criteria</span><span class="tc-tag">Use Cases</span><span class="tc-tag">Process Mapping</span><span class="tc-tag">Gap Analysis</span><span class="tc-tag">Stakeholder Workshops</span><span class="tc-tag">UAT Support</span></div>
+            </div>
+            <div>
+              <div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.4rem">Methods &amp; Frameworks</div>
+              <div class="tag-cloud"><span class="tc-tag">BABOK® Aligned Techniques</span><span class="tc-tag">Agile</span><span class="tc-tag">Scrum</span><span class="tc-tag">Waterfall</span><span class="tc-tag">SDLC</span><span class="tc-tag">Sprint Planning</span><span class="tc-tag">Backlog Refinement</span></div>
+            </div>
+            <div>
+              <div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:.4rem">Tools &amp; Platforms</div>
+              <div class="tag-cloud"><span class="tc-tag">Jira (Basic)</span><span class="tc-tag">Confluence (Basic)</span><span class="tc-tag">MS Project</span><span class="tc-tag">SharePoint</span><span class="tc-tag">MS Office Suite (Excel, Word, PowerPoint, Outlook)</span><span class="tc-tag">Zoom</span><span class="tc-tag">MS Teams</span><span class="tc-tag">Google Workspace</span><span class="tc-tag">Lucidchart</span><span class="tc-tag">Miro Board</span><span class="tc-tag">Visio</span><span class="tc-tag">Big Picture</span></div>
+            </div>
+            <div>
+              <div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);margin-bottom:.4rem">Data &amp; Reporting</div>
+              <div class="tag-cloud"><span class="tc-tag">Excel (VLOOKUP, PivotTables, formulas, basic macros)</span><span class="tc-tag">Power BI (dashboards, visuals)</span><span class="tc-tag">SQL (Beginner)</span><span class="tc-tag">Tableau (Familiar)</span><span class="tc-tag">Dashboards</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SWOT -->
+	<!-- 
+    <div class="fi d2" style="margin-top:1rem">
+      <div class="panel">
+        <div class="panel-header"><div class="ph-title"><span class="ph-icon">◆</span>Personal SWOT Analysis</div><div class="ph-badge">Self-assessment</div></div>
+        <div class="panel-body">
+          <div class="swot-grid">
+            <div class="swot-cell swot-s">
+              <div class="swot-h swot-sh">Strengths</div>
+              <ul class="swot-items swot-si">
+                <li>15+ years cross-industry career experience</li>
+                <li>BABOK® framework knowledge &amp; ECBA® candidate</li>
+                <li>Strong stakeholder communication skills</li>
+                <li>Financial services domain familiarity (insolvency, credit)</li>
+                <li>Permanent Resident — no sponsorship required</li>
+              </ul>
+            </div>
+            <div class="swot-cell swot-w">
+              <div class="swot-h swot-wh">Weaknesses</div>
+              <ul class="swot-items swot-wi">
+                <li>Entry-level in dedicated BA role designation</li>
+                <li>SQL at beginner stage</li>
+                <li>Building Canadian professional network</li>
+                <li>Limited enterprise tool depth (Jira/Confluence basic)</li>
+              </ul>
+            </div>
+            <div class="swot-cell swot-o">
+              <div class="swot-h swot-oh">Opportunities</div>
+              <ul class="swot-items swot-oi">
+                <li>ECBA® certification expected July/August 2026</li>
+                <li>George Brown Co-op placement requirement</li>
+                <li>Fintech sector growth in Greater Toronto Area</li>
+                <li>Digital transformation demand across industries</li>
+              </ul>
+            </div>
+            <div class="swot-cell swot-t">
+              <div class="swot-h swot-th">Threats</div>
+              <ul class="swot-items swot-ti">
+                <li>Competitive entry-level BA market in GTA</li>
+                <li>Rapid AI/automation disruption</li>
+                <li>Employers preferring 3+ years BA-specific experience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </section>
+
+  <!-- ── 07 EXPERIENCE ── -->
+  <section class="page-sec" id="experience">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">07 — Professional Experience</div><div class="sec-title">Work History</div></div>
+      <span class="sec-badge">15+ Years</span>
+    </div>
+    <div class="panel fi">
+      <div class="panel-header"><div class="ph-title"><span class="ph-icon">◫</span>Career Timeline</div></div>
+      <div class="panel-body" style="padding:.5rem .8rem">
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-date">Apr 2024<br>Jul 2025</div>
+              <div class="tl-dot-row"><div class="tl-dot" style="background:var(--blue)"></div><span class="dt-badge db-blue" style="font-size:.6rem">Recent</span></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-role">Insolvency Administrator</div>
+              <div class="tl-org">TRADER Corporation (Teranet CMS) · Mississauga, ON</div>
+              <ul class="tl-pts">
+                <li>Collaborated with stakeholders across BMO, RBC, TD, Money Mart, and licensed insolvency trustees, coordinating due diligence and ensuring accurate claim filing.</li>
+                <li>Filed and managed Proof of Claims on behalf of creditors; reviewed consumer proposal and bankruptcy files to assess eligibility and recommend acceptance, rejection, or counteroffer.</li>
+                <li>Analyzed bankruptcy and consumer proposal files to evaluate debtor circumstances, asset information, and creditor positions; communicated recommendations to relevant stakeholders.</li>
+                <li>Maintained accurate records, case files, and reports using Excel and SharePoint to track claim status, recovery progress, and compliance milestones.</li>
+                <li>Worked closely with cross-functional teams including legal, finance, and operations to coordinate case handling and ensure timely resolution of creditor claims.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-date">Jan 2024<br>Mar 2024</div>
+              <div class="tl-dot-row"><div class="tl-dot" style="background:var(--teal)"></div><span class="dt-badge db-teal" style="font-size:.6rem">Co-op</span></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-role">Business Operations &amp; Reporting Analyst — Co-op</div>
+              <div class="tl-org">Marlin Travel (Air Transat) · Mississauga, ON</div>
+              <ul class="tl-pts">
+                <li>Gathered and analyzed travel booking data to support operational KPI reporting; identified performance trends and communicated findings to management stakeholders.</li>
+                <li>Liaised with internal business clients and external vendors to clarify requirements and document process needs.</li>
+                <li>Designed performance dashboards summarizing key metrics, translating raw data into clear, actionable insights for operations leadership.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-date">Jan 2019<br>Sep 2020</div>
+              <div class="tl-dot-row"><div class="tl-dot" style="background:var(--green)"></div><span class="dt-badge db-green" style="font-size:.6rem">Junior BA</span></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-role">Junior Business Analyst</div>
+              <div class="tl-org">Infimind Technologies · Chennai, India</div>
+              <ul class="tl-pts">
+                <li>Assisted in eliciting, analyzing, and documenting business and functional requirements through stakeholder interviews, workshops, and process walkthroughs.</li>
+                <li>Prepared user stories, acceptance criteria, and basic process flow diagrams in support of development and testing team activities across software delivery projects.</li>
+                <li>Supported Agile Scrum ceremonies including sprint planning, backlog refinement, daily stand-ups, and retrospectives; helped align product backlog priorities with business needs.</li>
+                <li>Assisted with UAT planning, test case preparation, and QA coordination, validating delivered solutions against defined business requirements.</li>
+                <li>Contributed to release notes, status updates, and stakeholder reports.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-date">Nov 2016<br>Jun 2018</div>
+              <div class="tl-dot-row"><div class="tl-dot" style="background:var(--amber)"></div></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-role">Global Mobility Executive</div>
+              <div class="tl-org">Caresoft Global Inc. · Chennai, India</div>
+              <ul class="tl-pts">
+                <li>Managed employee travel programs for a multinational workforce, coordinating with HR, finance, and operations stakeholders to align travel policies with business requirements.</li>
+                <li>Monitored travel spend and generated management reports; collaborated with vendors to streamline workflows and address process inefficiencies.</li>
+                <li>Ensured compliance through structured documentation, approval workflows, and cross-functional stakeholder coordination.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-left">
+              <div class="tl-date">2009<br>2016</div>
+              <div class="tl-dot-row"><div class="tl-dot" style="background:var(--hint)"></div></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-role">Earlier Career</div>
+              <div class="tl-org">Extreme Asia Holidays · Carlson Wagonlit Travel · Darina Holidays LLC (Dubai) · Infimind</div>
+              <ul class="tl-pts">
+                <li>Progressive roles across travel management and operations spanning India and Dubai.</li>
+                <li>Positions held: Manager (Extreme Asia) → Asst. Manager (Carlson Wagonlit) → Reservation Officer (Darina Holidays, Dubai) → Executive Assistant (Infimind).</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 08 COMMUNITY ── -->
+  <section class="page-sec" id="community">
+    <div class="sec-header fi">
+      <div class="sec-title-wrap"><div class="sec-label">08 — Community &amp; Volunteer</div><div class="sec-title">Community Involvement</div></div>
+    </div>
+    <div class="info-box fi">
+      <p>As I build my professional network in Canada and transition into the technology sector, I am actively seeking volunteer and community opportunities — particularly in business analysis, digital literacy, or newcomer support services. I bring strong organisational, communication, and analytical skills to any team or cause I engage with. This section will be updated as I grow my community involvement in Mississauga.</p>
+    </div>
+  </section>
+
+  <!-- ── 09 CALLING CARD ── -->
+  <section class="page-sec" id="calling-card" style="text-align:center">
+    <div class="sec-header fi" style="justify-content:center;flex-direction:column;align-items:center;text-align:center">
+      <div class="sec-title-wrap" style="text-align:center"><div class="sec-label">09 — Networking Calling Card</div><div class="sec-title">Digital Calling Card</div></div>
+      <p style="max-width:520px;font-size:.88rem;color:var(--muted);margin-top:.6rem;line-height:1.75">A professional networking calling card for events and meetups — when presenting a full resume would feel socially inappropriate.</p>
+    </div>
+    <div class="card-scene fi">
+      <div class="ccw" title="Hover to flip">
+        <div class="ccf ccfront">
+          <div>
+            <div class="ccf-band"></div>
+            <div class="ccf-top">
+              <div class="ccf-av">SM</div>
+              <div>
+                <div class="ccf-name">Sandhiya Manikandan</div>
+                <div class="ccf-title">Business Analyst · ECBA® Candidate</div>
+              </div>
+            </div>
+          </div>
+          <div class="ccf-contacts">
+            <div class="ccf-line"><span>✉</span> sandhiya.manikandan@georgebrown.ca</div>
+            <div class="ccf-line"><span>📱</span> (437) 556-1807</div>
+            <div class="ccf-line"><span>📍</span> Mississauga, ON · Canada</div>
+            <div class="ccf-line"><span>💼</span> linkedin.com/in/sandhiya-manikandan-b1a47784</div>
+          </div>
+        </div>
+        <div class="ccf ccback">
+          <div class="ccb-name">Sandhiya M.</div>
+          <div class="ccb-sub">Business Analyst · Fintech</div>
+          <div class="ccb-div"></div>
+          <div class="ccb-skills">
+            <span class="ccb-tag">Requirements</span><span class="ccb-tag">Agile</span>
+            <span class="ccb-tag">BABOK®</span><span class="ccb-tag">Power BI</span>
+            <span class="ccb-tag">UAT</span><span class="ccb-tag">ECBA® 2026</span>
+          </div>
+          <div class="ccb-div"></div>
+          <div class="ccb-note">George Brown College · Mississauga, ON</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:.75rem;color:var(--hint);letter-spacing:.1em;margin-bottom:2rem">↑ Hover the card to flip it</p>
+    <div class="card-grid fi" style="max-width:860px;margin:0 auto;text-align:left">
+      <div class="dash-card"><div class="dc-top"><div class="dc-icon dci-blue">🤝</div></div><div class="dc-title">When to use it</div><div class="dc-desc">At networking events, career fairs, and meetups when handing a full resume would feel out of place.</div></div>
+      <div class="dash-card"><div class="dc-top"><div class="dc-icon dci-green">💡</div></div><div class="dc-title">Why it works</div><div class="dc-desc">Shares your contact info in a professional format — keeping you memorable without being intrusive.</div></div>
+      <div class="dash-card"><div class="dc-top"><div class="dc-icon dci-teal">🔗</div></div><div class="dc-title">Builds your network</div><div class="dc-desc">Helps contacts reconnect for job leads, referrals, and professional support long after you meet.</div></div>
+      <div class="dash-card"><div class="dc-top"><div class="dc-icon dci-amber">📱</div></div><div class="dc-title">Digital advantage</div><div class="dc-desc">Lives in your portfolio — share the link so anyone can access it instantly from their phone.</div></div>
+    </div>
+  </section>
+
+  <!-- ── 10 CONTACT ── -->
+  <section class="page-sec" id="contact" style="text-align:center">
+    <div class="sec-header fi" style="flex-direction:column;align-items:center;text-align:center">
+      <div class="sec-title-wrap" style="text-align:center"><div class="sec-label">10 — Contact</div><div class="sec-title">Get in Touch</div></div>
+      <p style="max-width:440px;font-size:.88rem;color:var(--muted);margin-top:.6rem">Actively seeking Business Analyst opportunities in fintech and IT. Available part-time immediately, full-time from September 2026. Reach out anytime!</p>
+    </div>
+    <div class="contact-grid fi" style="max-width:900px;margin:0 auto 2rem">
+      <a href="mailto:sandhiya.manikandan@georgebrown.ca" class="contact-card">
+        <div class="cc-ico-wrap">✉️</div>
+        <div><div class="cc-label">Email</div><div class="cc-val" style="overflow-wrap: break-word; word-break: break-all;">sandhiya.manikandan@georgebrown.ca</div></div>
+      </a>
+      <a href="tel:4375561807" class="contact-card">
+        <div class="cc-ico-wrap">📱</div>
+        <div><div class="cc-label">Phone</div><div class="cc-val">(437) 556-1807</div></div>
+      </a>
+      <a href="https://linkedin.com/in/sandhiya-manikandan-b1a47784" target="_blank" class="contact-card">
+        <div class="cc-ico-wrap">💼</div>
+        <div><div class="cc-label">LinkedIn</div><div class="cc-val">View My Profile →</div></div>
+      </a>
+      <div class="contact-card">
+        <div class="cc-ico-wrap">📍</div>
+        <div><div class="cc-label">Location</div><div class="cc-val">Mississauga, ON, Canada</div></div>
+      </div>
+    </div>
+    <a href="mailto:sandhiya.manikandan@georgebrown.ca" class="tb-btn tb-btn-primary" style="display:inline-flex;font-size:.82rem;padding:.7rem 2rem;border-radius:var(--r8)">Send Me an Email</a>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="dash-footer">
+    <div class="df-text">© 2026 Sandhiya Manikandan · Personal Portfolio · Mississauga, ON</div>
+    <div class="df-dots">
+      <div class="df-dot" style="background:#2563eb"></div>
+      <div class="df-dot" style="background:#0891b2"></div>
+      <div class="df-dot" style="background:#16a34a"></div>
+      <div class="df-dot" style="background:#d97706"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function sw(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+}
+
+// Scroll animations
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})
+},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+// Active sidebar link on scroll
+const sections=document.querySelectorAll('section[id], div[id="toc"]');
+const links=document.querySelectorAll('.sb-link');
+const tbSection=document.getElementById('tb-section');
+const secNames={
+  'overview':'Overview','toc':'Table of Contents','biography':'Biography',
+  'career':'Career Goal','work':'Work Samples','certs':'Certificates',
+  'academic':'Academic Record','skills':'Skills','experience':'Experience',
+  'community':'Community','calling-card':'Calling Card','contact':'Contact'
+};
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120) cur=s.id;
+  });
+  links.forEach(l=>{
+    l.classList.toggle('active', l.getAttribute('href')==='#'+cur);
+  });
+  if(tbSection && secNames[cur]) tbSection.textContent=secNames[cur];
+},{ passive:true });
+</script>
+</body>
+</html>
